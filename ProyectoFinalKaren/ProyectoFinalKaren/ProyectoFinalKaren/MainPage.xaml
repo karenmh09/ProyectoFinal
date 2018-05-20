@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:ProyectoFinalKaren"
              x:Class="ProyectoFinalKaren.MainPage">
 
-	<Label Text="Welcome to Xamarin.Forms!" 
+	<Label Text="Este es el proyecto final de Karen" 
            VerticalOptions="Center" 
            HorizontalOptions="Center" />
 
