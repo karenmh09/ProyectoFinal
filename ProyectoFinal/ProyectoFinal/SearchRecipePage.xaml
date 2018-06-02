@@ -1,12 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoFinal.SearchRecipePage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="SEARCH!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
-</ContentPage>
+    <TabbedPage.Children>
+        <ContentPage Title="Search By Recipe Name">
+            <StackLayout Orientation="Vertical">
+                <Label Text="Please enter the recipe name (or part) that you are looking for."></Label>
+
+                <Entry x:Name="txtSearchByName"></Entry>
+
+                <Button x:Name="btnSearchByName" BackgroundColor="RoyalBlue" TextColor="White"></Button>
+                
+            </StackLayout>
+        </ContentPage>
+
+        <ContentPage Title="Search By Main Ingredient">
+            <StackLayout Orientation="Vertical">
+                <Label Text="Please enter the main ingredient to retrieve a list of recipes."></Label>
+
+                <Entry x:Name="txtSearchByIngredient"></Entry>
+
+                <Button x:Name="btnSearchByIngredient" BackgroundColor="RoyalBlue" TextColor="White"></Button>
+
+            </StackLayout>
+        </ContentPage>
+    </TabbedPage.Children>
+</TabbedPage>

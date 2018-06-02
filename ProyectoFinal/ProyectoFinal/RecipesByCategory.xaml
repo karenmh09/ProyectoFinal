@@ -1,17 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ProyectoFinal.CategoryListPage">
+             x:Class="ProyectoFinal.RecipesByCategory">
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical">
-            
-            <ListView x:Name="categoriesList">
+        <StackLayout>
+            <ListView x:Name="recipesByCategoryList">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Orientation="Horizontal">
-                                <Image Source= "{Binding strCategoryThumb}" />
-                                <Label Text="{Binding strCategory}" />
+                                <Image Source="{Binding strMealThumb}" />
+                                <Label Text="{Binding strMeal}" />
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

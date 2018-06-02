@@ -14,6 +14,7 @@ namespace ProyectoFinal.Modelo
 	public class Recipe
 	{
 		public int idMeal { get; set; }
+		public String strMeal { get; set; }
 		public String strCategory { get; set; }
 		public String strInstructions { get; set; }
 		public String strMealThumb { get; set; }

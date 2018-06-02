@@ -6,12 +6,12 @@
     <ScrollView>
         <StackLayout Orientation="Vertical">
         
-            <Label x:Name="RecipeTitle" VerticalOptions="CenterAndExpand" />
+            <Label x:Name="RecipeTitle" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" />
+            <Label x:Name="RecipeCategory" VerticalOptions="CenterAndExpand" />
+            <StackLayout Orientation="Horizontal">
 
-        <StackLayout Orientation="Vertical">
-
-            <Image x:Name="RecipeImage" AbsoluteLayout.LayoutBounds="0,0,1,1"   AbsoluteLayout.LayoutFlags="All" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill"/>
-            <Label x:Name="RecipeIngredients" VerticalOptions="CenterAndExpand" />
+                <Image x:Name="RecipeImage" Source="{Binding strMealThumb}" AbsoluteLayout.LayoutBounds="0,0,1,1"   AbsoluteLayout.LayoutFlags="All" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill"/>
+                <Label x:Name="RecipeIngredients" />
 
         </StackLayout>
 

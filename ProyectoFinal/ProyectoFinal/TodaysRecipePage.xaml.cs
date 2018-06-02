@@ -15,14 +15,13 @@ namespace ProyectoFinal
 
 	public partial class TodaysRecipePage : ContentPage
 	{
-		private RestService RestServiceClient { get; set; }
 		private Recipe TodayRecipe { get; set; }
 
 		public TodaysRecipePage()
 		{
 			InitializeComponent();
+			BindingContext = this;
 			Title = "Today's Recipe";
-			RestServiceClient = new RestService();
 		}
 
 		protected override async void OnAppearing()
@@ -33,25 +32,35 @@ namespace ProyectoFinal
 
 			try
 			{
-				var json = await RestServiceClient.GetRandomRecipeJsonAsync();
+				var json = await RestService.GetRandomRecipeJsonAsync();
 				var meals = JsonConvert.DeserializeObject<Meals>(json);
 
 				foreach (var recipe in meals.meals)
 				{
 					TodayRecipe = recipe;
-					RecipeTitle.Text = recipe.strCategory;
+					RecipeTitle.Text = recipe.strMeal;
+					RecipeCategory.Text = recipe.strCategory;
 					RecipeIngredients.Text = recipe.getIngredientes();
 					RecipeInstructions.Text = recipe.strInstructions;
 
-					RecipeImage.Source = new UriImageSource
+					/*RecipeImage.Source = new UriImageSource
 					{
 						Uri = new Uri(recipe.strMealThumb),
 						CachingEnabled = true,
 						CacheValidity = new TimeSpan(5, 0, 0, 0)
-					};
+					};*/
+
+					//webImage.Source = "https://xamarin.com/content/images/pages/forms/example-app.png";
+					//image.Source = new UriImageSource { CachingEnabled = false, Uri="http://server.com/image" };
+					/**webImage.Source = new UriImageSource
+					{
+						Uri = new Uri("https://xamarin.com/content/images/pages/forms/example-app.png"),
+						CachingEnabled = true,
+						CacheValidity = new TimeSpan(5,0,0,0)
+					};*/
 				}
 
-				
+
 			}
 			finally
 			{

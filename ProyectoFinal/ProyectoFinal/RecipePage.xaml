@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoFinal.RecipePage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Orientation="Vertical">
+
+                <Label x:Name="RecipeTitle" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" />
+                <Label x:Name="RecipeCategory" VerticalOptions="CenterAndExpand" />
+                <StackLayout Orientation="Horizontal">
+
+                    <Image x:Name="RecipeImage" AbsoluteLayout.LayoutBounds="0,0,1,1"   AbsoluteLayout.LayoutFlags="All" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill"/>
+                    <Label x:Name="RecipeIngredients" />
+
+                </StackLayout>
+
+                <Label x:Name="RecipeInstructions"  VerticalOptions="CenterAndExpand" />
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
