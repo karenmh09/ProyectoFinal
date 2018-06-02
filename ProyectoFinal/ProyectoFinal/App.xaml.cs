@@ -11,7 +11,17 @@ namespace ProyectoFinal
 		{
 			InitializeComponent();
 
-			MainPage = new MainPage();
+			/** Pagina principal de la aplicacion
+			 *  Muestra un menu tipo Drawer, que muestra las recetas por categoria,
+			 *  ingrediente o la receta del dia
+			*/			
+			var mainPage = new DrawerMenuPage()
+            {
+                Title = "Recipes"
+            };
+
+            MainPage = new NavigationPage(mainPage);
+			 
 		}
 
 		protected override void OnStart ()
