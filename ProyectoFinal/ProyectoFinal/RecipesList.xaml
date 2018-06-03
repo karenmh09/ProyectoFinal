@@ -1,22 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ProyectoFinal.CategoryListPage">
+             x:Class="ProyectoFinal.RecipesList">
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical">
+        <StackLayout>
             <ActivityIndicator IsVisible="{Binding IsBusy}"
                                IsRunning="{Binding IsBusy}" 
                                VerticalOptions="Center"
                                HorizontalOptions="Center"
                                />
-            
-            <ListView x:Name="categoriesList">
+            <ListView x:Name="recipesList">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Orientation="Horizontal">
-                                <Image Margin="5" Source= "{Binding strCategoryThumb}" />
-                                <Label Margin="5" FontSize="Medium" Text="{Binding strCategory}" />
+                                <Image Margin="5" Source="{Binding strMealThumb}" />
+                                <Label Margin="5" FontSize="Medium" Text="{Binding strMeal}" />
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

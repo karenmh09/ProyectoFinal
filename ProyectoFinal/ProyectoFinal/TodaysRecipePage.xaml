@@ -5,17 +5,23 @@
              x:Class="ProyectoFinal.TodaysRecipePage">
     <ScrollView>
         <StackLayout Orientation="Vertical">
-        
-            <Label x:Name="RecipeTitle" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" />
-            <Label x:Name="RecipeCategory" VerticalOptions="CenterAndExpand" />
+
+            <ActivityIndicator IsVisible="{Binding IsBusy}"
+                               IsRunning="{Binding IsBusy}" 
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"
+                               />
+            
+            <Label x:Name="RecipeTitle" FontSize="Large" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" />
+            <Label Margin="10" FontSize="Medium" x:Name="RecipeCategory" VerticalOptions="CenterAndExpand" />
             <StackLayout Orientation="Horizontal">
 
-                <Image x:Name="RecipeImage" Source="{Binding strMealThumb}" AbsoluteLayout.LayoutBounds="0,0,1,1"   AbsoluteLayout.LayoutFlags="All" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill"/>
-                <Label x:Name="RecipeIngredients" />
+                <Image Margin="5" x:Name="RecipeImage" AbsoluteLayout.LayoutBounds="0,0,1,1"   AbsoluteLayout.LayoutFlags="All" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill"/>
+                <Label Margin="5"  FontSize="Medium" x:Name="RecipeIngredients" />
 
-        </StackLayout>
+            </StackLayout>
 
-        <Label x:Name="RecipeInstructions"  VerticalOptions="CenterAndExpand" />
+            <Label Margin="15" FontSize="Medium"  x:Name="RecipeInstructions"  VerticalOptions="CenterAndExpand" />
             
         </StackLayout>
     </ScrollView>

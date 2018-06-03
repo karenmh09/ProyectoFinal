@@ -4,23 +4,36 @@
              x:Class="ProyectoFinal.SearchRecipePage">
     <TabbedPage.Children>
         <ContentPage Title="Search By Recipe Name">
+            
             <StackLayout Orientation="Vertical">
-                <Label Text="Please enter the recipe name (or part) that you are looking for."></Label>
+                <ActivityIndicator IsVisible="{Binding IsBusy}"
+                               IsRunning="{Binding IsBusy}" 
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"
+                               />
 
-                <Entry x:Name="txtSearchByName"></Entry>
+                <Label Margin="10" FontSize="Medium" Text="Please enter the recipe name (or part) that you are looking for."></Label>
 
-                <Button x:Name="btnSearchByName" BackgroundColor="RoyalBlue" TextColor="White"></Button>
+                <Entry Margin="10" FontSize="Medium" x:Name="txtSearchByName" Placeholder="Enter recipe name"></Entry>
+
+                <Button Margin="10" FontSize="Medium" Text="Search" x:Name="btnSearchByName" BackgroundColor="RoyalBlue" TextColor="White"></Button>
                 
             </StackLayout>
         </ContentPage>
 
         <ContentPage Title="Search By Main Ingredient">
             <StackLayout Orientation="Vertical">
-                <Label Text="Please enter the main ingredient to retrieve a list of recipes."></Label>
+                <ActivityIndicator IsVisible="{Binding IsBusy}"
+                               IsRunning="{Binding IsBusy}" 
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"
+                               />
 
-                <Entry x:Name="txtSearchByIngredient"></Entry>
+                <Label Margin="10" FontSize="Medium" Text="Please enter the main ingredient to retrieve a list of recipes."></Label>
 
-                <Button x:Name="btnSearchByIngredient" BackgroundColor="RoyalBlue" TextColor="White"></Button>
+                <Entry Margin="10" FontSize="Medium" x:Name="txtSearchByIngredient" Placeholder="Enter the main ingredient"></Entry>
+
+                <Button Margin="10" FontSize="Medium" Text="Search" x:Name="btnSearchByIngredient" BackgroundColor="RoyalBlue" TextColor="White"></Button>
 
             </StackLayout>
         </ContentPage>

@@ -19,6 +19,9 @@ namespace ProyectoFinal.ConsumeRestService
 		private static string recipe = "";
 		private static string recipeByMainIngredient = "";
 		private static string selectedMainIngredient = "";
+		private static string selectedNameRecipe = "";
+		private static string recipeByNameRecipe = "";
+
 		private RestService()
 		{
 		}
@@ -132,7 +135,7 @@ namespace ProyectoFinal.ConsumeRestService
 			if (recipeByMainIngredient.Length > 0 && selectedMainIngredient.Equals(mainIngredient))
 			{
 				Debug.WriteLine("Ya existe");
-				return recipesByCategory;
+				return recipeByMainIngredient;
 			}
 			if (!CrossConnectivity.Current.IsConnected)
 			{
@@ -148,6 +151,31 @@ namespace ProyectoFinal.ConsumeRestService
 				Debug.WriteLine(recipeByMainIngredient);
 
 				return recipeByMainIngredient;
+			}
+		}
+
+		//https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata
+		static internal async Task<string> GetRecipesByNameJsonAsync(String recipeName)
+		{
+			if (recipeByNameRecipe.Length > 0 && selectedNameRecipe.Equals(recipeName))
+			{
+				Debug.WriteLine("Ya existe");
+				return recipeByNameRecipe;
+			}
+			if (!CrossConnectivity.Current.IsConnected)
+			{
+				Debug.WriteLine("No network");
+				return string.Empty;
+			}
+			using (var client = new HttpClient())
+			{
+				client.BaseAddress = new Uri(SERVICE_ENDPOINT);
+
+				recipeByNameRecipe = await client.GetStringAsync($"search.php?s=" + recipeName);
+				selectedNameRecipe = recipeName;
+				Debug.WriteLine(recipeByNameRecipe);
+
+				return recipeByNameRecipe;
 			}
 		}
 	}

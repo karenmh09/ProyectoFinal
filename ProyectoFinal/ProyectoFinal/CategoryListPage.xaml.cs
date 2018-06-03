@@ -43,6 +43,9 @@ namespace ProyectoFinal
 					{
 						list.Add(category);
 					}
+				}else
+				{
+					await App.Current.MainPage.DisplayAlert("Error", "No Results were found.", "OK");
 				}
 			}
 			finally

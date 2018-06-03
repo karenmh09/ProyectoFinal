@@ -45,6 +45,10 @@ namespace ProyectoFinal
 						list.Add(recipe);
 					}
 				}
+				else
+				{
+					await App.Current.MainPage.DisplayAlert("Error", "No results were found.", "OK");
+				}
 			}
 			finally
 			{
@@ -73,6 +77,9 @@ namespace ProyectoFinal
 					{
 						recipe = theRecipe;
 					}
+				}else
+				{
+					await App.Current.MainPage.DisplayAlert("Error", "There was an error with the connection.", "OK");
 				}
 			}
 			finally

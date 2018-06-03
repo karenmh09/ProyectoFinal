@@ -4,13 +4,19 @@
              x:Class="ProyectoFinal.RecipesByCategory">
     <ContentPage.Content>
         <StackLayout>
+            <ActivityIndicator IsVisible="{Binding IsBusy}"
+                               IsRunning="{Binding IsBusy}" 
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"
+                               />
+            
             <ListView x:Name="recipesByCategoryList">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Orientation="Horizontal">
-                                <Image Source="{Binding strMealThumb}" />
-                                <Label Text="{Binding strMeal}" />
+                                <Image Margin="5"  Source="{Binding strMealThumb}" />
+                                <Label Margin="5" FontSize="Medium" Text="{Binding strMeal}" />
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

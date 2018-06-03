@@ -39,25 +39,10 @@ namespace ProyectoFinal
 				{
 					TodayRecipe = recipe;
 					RecipeTitle.Text = recipe.strMeal;
-					RecipeCategory.Text = recipe.strCategory;
+					RecipeCategory.Text = "Category: " +  recipe.strCategory;
 					RecipeIngredients.Text = recipe.getIngredientes();
 					RecipeInstructions.Text = recipe.strInstructions;
-
-					/*RecipeImage.Source = new UriImageSource
-					{
-						Uri = new Uri(recipe.strMealThumb),
-						CachingEnabled = true,
-						CacheValidity = new TimeSpan(5, 0, 0, 0)
-					};*/
-
-					//webImage.Source = "https://xamarin.com/content/images/pages/forms/example-app.png";
-					//image.Source = new UriImageSource { CachingEnabled = false, Uri="http://server.com/image" };
-					/**webImage.Source = new UriImageSource
-					{
-						Uri = new Uri("https://xamarin.com/content/images/pages/forms/example-app.png"),
-						CachingEnabled = true,
-						CacheValidity = new TimeSpan(5,0,0,0)
-					};*/
+					RecipeImage.Source = recipe.strMealThumb;
 				}
 
 

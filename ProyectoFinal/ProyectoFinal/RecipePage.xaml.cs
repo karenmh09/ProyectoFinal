@@ -19,11 +19,13 @@ namespace ProyectoFinal
 		{
 			InitializeComponent();
 			Title = recipe.strMeal;
+			BindingContext = this;
 
-			RecipeTitle.Text = recipe.strMeal;
-			RecipeCategory.Text = recipe.strCategory;
+			//RecipeTitle.Text = recipe.strMeal;
+			RecipeCategory.Text = "Category: " + recipe.strCategory;
 			RecipeIngredients.Text = recipe.getIngredientes();
 			RecipeInstructions.Text = recipe.strInstructions;
+			RecipeImage.Source = recipe.strMealThumb;
 		}
 
 	}
