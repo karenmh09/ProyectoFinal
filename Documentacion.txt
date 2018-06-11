@@ -1,0 +1,24 @@
+Documentación
+
+1. Funcionalidades de la aplicación
+
+Esta aplicación es de recetas de cocina. Contiene un menu tipo master-detail page, que contiene 3 opciones
+
+* Receta del dia
+* Lista de categorias de recetas -> lista de categorias de acuerdo a la receta elegida -> Receta elegida
+* Busqueda de recetas (Muestra 2 tabs)
+	- Busqueda por nombre de receta
+	- Busqueda por ingrediente principal
+
+
+2. Plugas o knows issues
+
+No que yo sepa.
+
+3. Cosas pendientes en el proyecto
+
+Deseable agregar base de datos para la aplicación con el objetivo no tener que hacer un request cada vez que la aplicación se mata.
+
+4.Detalles del API utilizada
+
+Esta página contiene todos los detalles https://www.themealdb.com/api.php

@@ -11,6 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProyectoFinal", "ProyectoFi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyectoFinal.Modelo", "ProyectoFinal.Modelo\ProyectoFinal.Modelo.csproj", "{9008B1D8-84EC-45FB-96D4-8C4448C59D61}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{98FC5514-F42B-44E0-9866-551432700EDB}"
+	ProjectSection(SolutionItems) = preProject
+		Documentacion.txt = Documentacion.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
